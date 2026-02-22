@@ -256,10 +256,22 @@
             'Reserved': 'Reservado',
             'Handicap Accessible': 'Acceso para Discapacitados',
             
+            // Etiquetas del tooltip de asientos
+            'SEC': 'SECC',
+            'ROW': 'FILA',
+            'SEAT': 'ASIENTO',
+            'Ticket Price': 'Precio del Boleto',
+            
             // Controles del mapa
             'Reset Map': 'Restablecer Mapa',
             'Loading Image..': 'Cargando Imagen...',
             'Loading..': 'Cargando...',
+            
+            // Carrito de boletos
+            'Your Tickets In Cart': 'Tus Boletos en el Carrito',
+            'Your seats will expire in': 'Tus asientos expirarán en',
+            'Seats': 'Asientos',
+            'Buy Now': 'Comprar Ahora',
             
             // Botones de carrito
             'View Cart': 'Ver Carrito',
@@ -312,6 +324,14 @@
         replaceText('.ev_more_text');
         replaceText('.evost_seats_footer p');
         replaceText('.evocard_main_image_hold');
+        
+        // Tooltip y etiquetas de asientos
+        replaceText('.evost_ttc_data .label');
+        replaceText('.evost_tt_data .label');
+        replaceText('.evost_tix_title');
+        replaceText('.evost_stub_action .count');
+        replaceText('.evost_stub_action .evcal_btn');
+        replaceText('.evost_cart_expirations span');
         
         // Traducir atributos data-txt y data-t
         $('[data-txt="less"]').attr('data-txt', 'menos');
