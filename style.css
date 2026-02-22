@@ -4,7 +4,7 @@ Theme URI: https://github.com/Alecsiomatic/ticket-to-ride-theme
 Author: Alecsiomatic
 Author URI: https://github.com/Alecsiomatic
 Description: Un tema moderno con efectos de vidrio líquido (liquid glass) inspirado en Ticket to Ride. Colores vibrantes amarillo dorado y rojo con efectos glassmorphism.
-Version: 1.4.0
+Version: 1.4.1
 Requires at least: 5.9
 Tested up to: 6.4
 Requires PHP: 7.4
@@ -1372,4 +1372,194 @@ p {
 /* Ocultar el item "t" del carrito (metadata técnica) */
 .wc-block-components-product-details__t {
     display: none !important;
+}
+/* ===================================
+   CHECKOUT - RESPONSIVE Y LAYOUT FIX
+   =================================== */
+
+/* Mantener layout de 2 columnas del checkout */
+.wc-block-components-sidebar-layout.wc-block-checkout {
+    display: flex !important;
+    flex-wrap: wrap !important;
+}
+
+.wc-block-components-sidebar-layout.wc-block-checkout.is-large {
+    flex-wrap: nowrap !important;
+}
+
+.wc-block-components-sidebar-layout.wc-block-checkout .wc-block-components-main {
+    flex: 1 1 65% !important;
+    min-width: 0 !important;
+}
+
+.wc-block-components-sidebar-layout.wc-block-checkout .wc-block-components-sidebar {
+    flex: 0 0 35% !important;
+    max-width: 400px !important;
+}
+
+/* Responsive para móvil */
+@media (max-width: 768px) {
+    .wc-block-components-sidebar-layout.wc-block-checkout {
+        flex-direction: column !important;
+    }
+    
+    .wc-block-components-sidebar-layout.wc-block-checkout .wc-block-components-main,
+    .wc-block-components-sidebar-layout.wc-block-checkout .wc-block-components-sidebar {
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    .wc-block-checkout__main {
+        padding: 20px !important;
+        border-radius: 16px !important;
+    }
+    
+    .wc-block-checkout__sidebar {
+        padding: 20px !important;
+        border-radius: 16px !important;
+        margin-top: 20px !important;
+    }
+    
+    .wc-block-components-checkout-step {
+        padding: 15px !important;
+    }
+    
+    /* MP Wallet button responsive */
+    .mp-wallet-button-container {
+        padding: 15px !important;
+        flex-direction: column !important;
+    }
+    
+    .mp-wallet-button-container img {
+        max-width: 150px !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .mp-wallet-button-title span {
+        font-size: 14px !important;
+    }
+    
+    .mp-wallet-button-description {
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+    }
+    
+    .mp-wallet-button-button button {
+        width: 100% !important;
+        padding: 12px 20px !important;
+        font-size: 14px !important;
+    }
+    
+    /* Formulario MP responsive */
+    .mp-checkout-custom-card-form {
+        padding: 15px !important;
+    }
+    
+    .mp-checkout-custom-dual-column-row {
+        flex-direction: column !important;
+    }
+    
+    .mp-checkout-custom-card-column {
+        width: 100% !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .mp-checkout-custom-left-card-input {
+        margin-right: 0 !important;
+    }
+    
+    /* Available payments responsive */
+    .mp-checkout-custom-available-payments {
+        padding: 10px !important;
+    }
+    
+    .mp-payment-methods-content {
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+    }
+    
+    .mp-payment-method-logo-container {
+        width: 40px !important;
+        height: 25px !important;
+    }
+    
+    .mp-payment-method-logo-image {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    /* Botones de acción responsive */
+    .wc-block-checkout__actions_row {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    
+    .wc-block-components-checkout-place-order-button {
+        width: 100% !important;
+        padding: 16px 25px !important;
+    }
+    
+    .wc-block-components-checkout-return-to-cart-button {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+    }
+}
+
+/* ===================================
+   EVENTON DESCRIPCIÓN COMPLETA FIX
+   =================================== */
+
+/* Asegurar que la descripción del evento sea completamente visible */
+.eventon_list_event,
+.evocard_box,
+.evcal_evdata_cell,
+.evoTX_wc,
+.evoTX_wc_section,
+.evotx_ticket_purchase_section {
+    overflow: visible !important;
+}
+
+/* Contenedor de descripción sin límite de altura */
+.evcal_event_details,
+.evocard_details,
+.event_description.evcal_eventcard,
+.eventon_desc_in {
+    max-height: none !important;
+    overflow: visible !important;
+    height: auto !important;
+}
+
+/* Contenido completo del evento */
+.eventon_full_description,
+.evcal_evdata_row,
+.evocard_content {
+    max-height: none !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+/* Fix para contenedores de EventON que cortan el contenido */
+.eventon_events_list,
+.eventon_list_event .evo_metarow_details {
+    overflow: visible !important;
+}
+
+/* Asegurar que el mapa de asientos no se corte */
+.evost_seat_map_section {
+    overflow: visible !important;
+    max-height: none !important;
+}
+
+.evost_inline_seat_map {
+    overflow: auto !important;
+}
+
+/* Carrito de asientos visible */
+.evost_seats_in_cart {
+    overflow: visible !important;
+    max-height: none !important;
 }
