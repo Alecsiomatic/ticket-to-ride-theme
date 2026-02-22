@@ -4,7 +4,7 @@ Theme URI: https://github.com/Alecsiomatic/ticket-to-ride-theme
 Author: Alecsiomatic
 Author URI: https://github.com/Alecsiomatic
 Description: Un tema moderno con efectos de vidrio líquido (liquid glass) inspirado en Ticket to Ride. Colores vibrantes amarillo dorado y rojo con efectos glassmorphism.
-Version: 1.4.4
+Version: 1.4.5
 Requires at least: 5.9
 Tested up to: 6.4
 Requires PHP: 7.4
@@ -2293,4 +2293,326 @@ input.mp-card-holder-name {
     pointer-events: auto !important;
     position: relative !important;
     z-index: 1 !important;
+}
+
+/* ===================================
+   MI CUENTA - WOOCOMMERCE ACCOUNT - LIQUID GLASS
+   =================================== */
+
+/* Contenedor principal de Mi Cuenta */
+#tgwc-woocommerce {
+    display: flex !important;
+    gap: 30px !important;
+    padding: 20px !important;
+}
+
+/* Navegación lateral */
+.tgwc-woocommerce-MyAccount-navigation {
+    flex: 0 0 280px !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding: 25px !important;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15) !important;
+    height: fit-content !important;
+}
+
+/* Avatar del usuario */
+.tgwc-user-avatar {
+    text-align: center !important;
+    margin-bottom: 25px !important;
+    padding-bottom: 20px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.tgwc-user-avatar-image-wrap {
+    width: 100px !important;
+    height: 100px !important;
+    margin: 0 auto 15px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    border: 3px solid var(--ttr-yellow) !important;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3) !important;
+    position: relative !important;
+}
+
+.tgwc-user-avatar-image-wrap img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+.tgwc-user-avatar-upload-icon {
+    position: absolute !important;
+    bottom: 5px !important;
+    right: 5px !important;
+    background: var(--ttr-yellow) !important;
+    border-radius: 50% !important;
+    width: 28px !important;
+    height: 28px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+.tgwc-user-avatar-upload-icon:hover {
+    background: var(--ttr-yellow-dark) !important;
+    transform: scale(1.1) !important;
+}
+
+.tgwc-user-avatar-upload-icon svg {
+    width: 14px !important;
+    height: 14px !important;
+    color: #1a1a2e !important;
+}
+
+/* Info del usuario */
+.tgwc-user-info {
+    text-align: center !important;
+}
+
+.tgwc-user-info h4 {
+    color: #1a1a2e !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 10px !important;
+}
+
+.tgwc-user-info .button {
+    background: rgba(232, 31, 38, 0.1) !important;
+    color: var(--ttr-red) !important;
+    border: 1px solid var(--ttr-red) !important;
+    border-radius: 10px !important;
+    padding: 8px 20px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    transition: all 0.3s ease !important;
+}
+
+.tgwc-user-info .button:hover {
+    background: var(--ttr-red) !important;
+    color: white !important;
+}
+
+/* Lista de navegación */
+.tgwc-woocommerce-MyAccount-navigation-wrap ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.tgwc-woocommerce-MyAccount-navigation-wrap li {
+    margin-bottom: 5px !important;
+}
+
+.tgwc-woocommerce-MyAccount-navigation-wrap li a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 12px 15px !important;
+    border-radius: 12px !important;
+    color: #1a1a2e !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    transition: all 0.3s ease !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.tgwc-woocommerce-MyAccount-navigation-wrap li a:hover {
+    background: rgba(255, 193, 7, 0.2) !important;
+    transform: translateX(5px) !important;
+}
+
+.tgwc-woocommerce-MyAccount-navigation-wrap li.is-active a,
+.tgwc-woocommerce-MyAccount-navigation-wrap li.tab_selected a {
+    background: linear-gradient(135deg, var(--ttr-yellow), var(--ttr-yellow-dark)) !important;
+    color: #1a1a2e !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3) !important;
+}
+
+.tgwc-woocommerce-MyAccount-navigation-wrap li a svg {
+    width: 18px !important;
+    height: 18px !important;
+    opacity: 0.7 !important;
+}
+
+.tgwc-woocommerce-MyAccount-navigation-wrap li.is-active a svg,
+.tgwc-woocommerce-MyAccount-navigation-wrap li.tab_selected a svg {
+    opacity: 1 !important;
+}
+
+/* Contenido principal de Mi Cuenta */
+.woocommerce-MyAccount-content {
+    flex: 1 !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding: 30px !important;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15) !important;
+}
+
+.woocommerce-MyAccount-content p {
+    color: #1a1a2e !important;
+    line-height: 1.7 !important;
+    font-size: 15px !important;
+}
+
+.woocommerce-MyAccount-content a {
+    color: var(--ttr-red) !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.woocommerce-MyAccount-content a:hover {
+    color: var(--ttr-red-dark) !important;
+    text-decoration: underline !important;
+}
+
+.woocommerce-MyAccount-content strong {
+    color: #1a1a2e !important;
+    font-weight: 700 !important;
+}
+
+/* Notices/Alertas */
+.woocommerce-notices-wrapper {
+    margin-bottom: 20px !important;
+}
+
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error {
+    background: rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(8px) !important;
+    border-radius: 12px !important;
+    padding: 15px 20px !important;
+    border-left: 4px solid var(--ttr-yellow) !important;
+    margin-bottom: 15px !important;
+}
+
+.woocommerce-error {
+    border-left-color: var(--ttr-red) !important;
+}
+
+/* ===================================
+   MI CUENTA - RESPONSIVE MÓVIL
+   =================================== */
+
+@media (max-width: 768px) {
+    /* Layout en columna */
+    #tgwc-woocommerce {
+        flex-direction: column !important;
+        padding: 10px !important;
+        gap: 15px !important;
+    }
+    
+    /* Navegación full width y colapsable */
+    .tgwc-woocommerce-MyAccount-navigation {
+        flex: none !important;
+        width: 100% !important;
+        padding: 15px !important;
+        border-radius: 12px !important;
+        background: white !important;
+        backdrop-filter: none !important;
+    }
+    
+    /* Avatar más pequeño en móvil */
+    .tgwc-user-avatar {
+        display: flex !important;
+        align-items: center !important;
+        text-align: left !important;
+        gap: 15px !important;
+        margin-bottom: 15px !important;
+        padding-bottom: 15px !important;
+    }
+    
+    .tgwc-user-avatar-image-wrap {
+        width: 60px !important;
+        height: 60px !important;
+        margin: 0 !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .tgwc-user-info {
+        text-align: left !important;
+        flex: 1 !important;
+    }
+    
+    .tgwc-user-info h4 {
+        font-size: 1rem !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .tgwc-user-info .button {
+        padding: 6px 15px !important;
+        font-size: 12px !important;
+    }
+    
+    /* Navegación en grid de 2 columnas */
+    .tgwc-woocommerce-MyAccount-navigation-wrap ul {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+    }
+    
+    .tgwc-woocommerce-MyAccount-navigation-wrap li {
+        margin-bottom: 0 !important;
+    }
+    
+    .tgwc-woocommerce-MyAccount-navigation-wrap li a {
+        padding: 10px !important;
+        font-size: 12px !important;
+        border-radius: 10px !important;
+        text-align: center !important;
+        flex-direction: column !important;
+        gap: 5px !important;
+    }
+    
+    .tgwc-woocommerce-MyAccount-navigation-wrap li a svg {
+        width: 20px !important;
+        height: 20px !important;
+        order: -1 !important;
+    }
+    
+    .tgwc-woocommerce-MyAccount-navigation-wrap li a:hover {
+        transform: none !important;
+    }
+    
+    /* Contenido */
+    .woocommerce-MyAccount-content {
+        padding: 20px !important;
+        border-radius: 12px !important;
+        background: white !important;
+        backdrop-filter: none !important;
+    }
+    
+    .woocommerce-MyAccount-content p {
+        font-size: 14px !important;
+    }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 400px) {
+    .tgwc-woocommerce-MyAccount-navigation-wrap ul {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .tgwc-woocommerce-MyAccount-navigation-wrap li a {
+        flex-direction: row !important;
+        text-align: left !important;
+    }
+    
+    .tgwc-woocommerce-MyAccount-navigation-wrap li a svg {
+        order: 1 !important;
+    }
 }
