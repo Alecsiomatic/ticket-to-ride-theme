@@ -4,7 +4,7 @@ Theme URI: https://github.com/Alecsiomatic/ticket-to-ride-theme
 Author: Alecsiomatic
 Author URI: https://github.com/Alecsiomatic
 Description: Un tema moderno con efectos de vidrio líquido (liquid glass) inspirado en Ticket to Ride. Colores vibrantes amarillo dorado y rojo con efectos glassmorphism.
-Version: 1.1.0
+Version: 1.2.0
 Requires at least: 5.9
 Tested up to: 6.4
 Requires PHP: 7.4
@@ -677,6 +677,155 @@ p {
 
 .bg-yellow {
     background: var(--ttr-yellow);
+}
+
+/* ===================================
+   QRCOMPLETO - ESTILOS PARA TICKETS
+   =================================== */
+
+/* Contenedor principal del ticket */
+.woocommerce-account .woocommerce-MyAccount-content > div[style*="flex-direction:column"],
+.qrcompleto-ticket-container,
+.entry-content > div[style*="flex-direction:column"] {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border-radius: 25px !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2) !important;
+    padding: 30px !important;
+    margin: 20px 0 !important;
+}
+
+/* Título del pedido */
+.woocommerce-account .woocommerce-MyAccount-content h3,
+.qrcompleto-ticket-container h3 {
+    color: var(--ttr-white) !important;
+    font-family: var(--font-heading) !important;
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 15px !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Estado del pedido */
+.woocommerce-account .woocommerce-MyAccount-content p[style*="color:green"],
+.qrcompleto-ticket-container p[style*="color:green"] {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.3) 0%, rgba(56, 142, 60, 0.3) 100%) !important;
+    color: #81C784 !important;
+    padding: 10px 20px !important;
+    border-radius: 12px !important;
+    display: inline-block !important;
+    font-weight: 600 !important;
+    border: 1px solid rgba(76, 175, 80, 0.4) !important;
+}
+
+/* Información general (fecha, total) */
+.woocommerce-account .woocommerce-MyAccount-content > div > div:first-child > p,
+.qrcompleto-ticket-container > div > p {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 15px !important;
+    margin: 8px 0 !important;
+}
+
+/* Título de sección "Asientos / Tickets" */
+.woocommerce-account .woocommerce-MyAccount-content h4,
+.qrcompleto-ticket-container h4 {
+    color: var(--ttr-yellow) !important;
+    font-family: var(--font-heading) !important;
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
+    margin: 25px 0 15px 0 !important;
+    padding-bottom: 10px !important;
+    border-bottom: 2px solid rgba(255, 193, 7, 0.3) !important;
+}
+
+/* Cada ticket/asiento */
+.woocommerce-account .woocommerce-MyAccount-content div[style*="border-bottom:1px solid"],
+.qrcompleto-ticket-container div[style*="border-bottom"] {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 15px !important;
+    padding: 20px !important;
+    margin-bottom: 15px !important;
+    border-bottom: none !important;
+}
+
+.woocommerce-account .woocommerce-MyAccount-content div[style*="border-bottom:1px solid"] p,
+.qrcompleto-ticket-container div[style*="border-bottom"] p {
+    color: rgba(255, 255, 255, 0.95) !important;
+    margin: 6px 0 !important;
+    font-size: 14px !important;
+}
+
+.woocommerce-account .woocommerce-MyAccount-content div[style*="border-bottom:1px solid"] strong,
+.qrcompleto-ticket-container div[style*="border-bottom"] strong {
+    color: var(--ttr-yellow) !important;
+}
+
+/* Contenedor del QR */
+.qr-container,
+.woocommerce-account .woocommerce-MyAccount-content .qr-container {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 20px !important;
+    padding: 25px !important;
+    margin-top: 25px !important;
+    text-align: center !important;
+}
+
+/* Imagen de portada del evento */
+.qrcompleto-cover-image,
+.qr-container .qrcompleto-cover-image {
+    margin-bottom: 20px !important;
+}
+
+.qrcompleto-cover-image img,
+.qr-container .qrcompleto-cover-image img {
+    border-radius: 15px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+    max-height: 200px !important;
+    object-fit: cover !important;
+}
+
+/* Imagen del QR */
+.qr-container > img[src*="qr_order"],
+.qr-container img[alt*="QR"] {
+    border-radius: 15px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+    max-width: 180px !important;
+    padding: 10px !important;
+    background: white !important;
+}
+
+/* Precio/Total destacado */
+.woocommerce-Price-amount {
+    color: var(--ttr-yellow) !important;
+    font-weight: 700 !important;
+    font-size: 1.2em !important;
+}
+
+/* Responsive para tickets */
+@media (max-width: 768px) {
+    .woocommerce-account .woocommerce-MyAccount-content > div[style*="flex-direction:column"],
+    .qrcompleto-ticket-container {
+        padding: 20px !important;
+        margin: 15px 0 !important;
+        border-radius: 18px !important;
+    }
+    
+    .woocommerce-account .woocommerce-MyAccount-content h3,
+    .qrcompleto-ticket-container h3 {
+        font-size: 1.5rem !important;
+    }
+    
+    .qr-container {
+        padding: 20px 15px !important;
+    }
+    
+    .qr-container > img[src*="qr_order"],
+    .qr-container img[alt*="QR"] {
+        max-width: 150px !important;
+    }
 }
 
 .mt-20 {
