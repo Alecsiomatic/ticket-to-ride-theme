@@ -4,7 +4,7 @@ Theme URI: https://github.com/Alecsiomatic/ticket-to-ride-theme
 Author: Alecsiomatic
 Author URI: https://github.com/Alecsiomatic
 Description: Un tema moderno con efectos de vidrio líquido (liquid glass) inspirado en Ticket to Ride. Colores vibrantes amarillo dorado y rojo con efectos glassmorphism.
-Version: 1.4.3
+Version: 1.4.4
 Requires at least: 5.9
 Tested up to: 6.4
 Requires PHP: 7.4
@@ -2033,9 +2033,9 @@ p {
         display: none !important;
     }
     
-    /* Fondo más limpio en móvil */
+    /* Fondo BLANCO en móvil - elimina barras amarillas */
     body {
-        background: linear-gradient(180deg, var(--ttr-yellow) 0%, #f5f5f5 100%) !important;
+        background: #f5f5f5 !important;
     }
     
     /* Desactivar animación liquid en móvil para mejor rendimiento */
@@ -2043,17 +2043,28 @@ p {
         display: none !important;
     }
     
-    /* Liquid glass más sutil en móvil */
+    /* Liquid glass sin efecto en móvil - fondo sólido */
     .liquid-glass {
-        backdrop-filter: blur(5px) !important;
-        -webkit-backdrop-filter: blur(5px) !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: white !important;
+        border-radius: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
     }
     
-    /* Page content full width */
+    /* Page content full width sin márgenes */
     .page-content,
-    .entry-content {
-        padding: 10px !important;
+    .entry-content,
+    article.page-content,
+    article.liquid-glass {
+        padding: 0 !important;
         margin: 0 !important;
+        background: white !important;
+        border-radius: 0 !important;
+        border: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
     }
     
     /* Elementor container fix */
@@ -2062,7 +2073,7 @@ p {
     }
     
     .e-con-inner {
-        padding: 0 10px !important;
+        padding: 0 !important;
     }
     
     /* WooCommerce checkout container */
@@ -2161,4 +2172,125 @@ p {
     input.mp-card-holder-name {
         background: white !important;
     }
+}
+
+/* ===================================
+   FIX BARRAS LATERALES AMARILLAS
+   =================================== */
+
+/* Quitar barras/bordes laterales en móvil */
+@media (max-width: 768px) {
+    /* Elementor section borders */
+    .elementor-section,
+    .elementor-container,
+    .elementor-column,
+    .elementor-widget-wrap,
+    .e-con,
+    .e-con-inner {
+        border: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+    }
+    
+    /* Full width en móvil */
+    .elementor-section.elementor-section-boxed > .elementor-container {
+        max-width: 100% !important;
+    }
+    
+    .elementor-column-gap-default > .elementor-column > .elementor-element-populated {
+        padding: 10px !important;
+    }
+    
+    /* Page wrapper sin bordes */
+    .page-content.liquid-glass,
+    article.liquid-glass {
+        border: none !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+    }
+    
+    /* Site content full width */
+    .site-content,
+    .content-area,
+    main {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+}
+
+/* ===================================
+   FIX IFRAMES MERCADO PAGO
+   =================================== */
+
+/* Asegurar que los iframes de MP sean interactivos */
+.mp-checkout-custom-card-input {
+    position: relative !important;
+    z-index: 1 !important;
+    pointer-events: auto !important;
+}
+
+.mp-checkout-custom-card-input iframe {
+    position: relative !important;
+    z-index: 10 !important;
+    pointer-events: auto !important;
+    min-height: 50px !important;
+    width: 100% !important;
+    display: block !important;
+}
+
+/* El contenedor del formulario no debe bloquear clicks */
+#form-checkout__cardNumber-container,
+#form-checkout__expirationDate-container,
+#form-checkout__securityCode-container {
+    position: relative !important;
+    z-index: 5 !important;
+    pointer-events: auto !important;
+    overflow: visible !important;
+}
+
+/* Input de nombre del titular */
+input#form-checkout__cardholderName,
+input.mp-card-holder-name {
+    pointer-events: auto !important;
+    z-index: 5 !important;
+    position: relative !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+}
+
+/* Asegurar que el formulario completo sea interactivo */
+.mp-checkout-custom-card-form {
+    position: relative !important;
+    z-index: 1 !important;
+    pointer-events: auto !important;
+}
+
+.mp-checkout-custom-card-row {
+    position: relative !important;
+    z-index: 1 !important;
+    pointer-events: auto !important;
+}
+
+/* Quitar cualquier overlay que bloquee */
+.mp-checkout-container::before,
+.mp-checkout-container::after,
+.mp-checkout-custom-container::before,
+.mp-checkout-custom-container::after {
+    display: none !important;
+    pointer-events: none !important;
+}
+
+/* Contenedor principal de MP */
+.mp-checkout-container,
+.mp-checkout-custom-container {
+    pointer-events: auto !important;
+    position: relative !important;
+}
+
+/* Fix para el contenido expandido del radio button */
+.wc-block-components-radio-control-accordion-content {
+    pointer-events: auto !important;
+    position: relative !important;
+    z-index: 1 !important;
 }
