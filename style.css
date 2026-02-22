@@ -4,7 +4,7 @@ Theme URI: https://github.com/Alecsiomatic/ticket-to-ride-theme
 Author: Alecsiomatic
 Author URI: https://github.com/Alecsiomatic
 Description: Un tema moderno con efectos de vidrio líquido (liquid glass) inspirado en Ticket to Ride. Colores vibrantes amarillo dorado y rojo con efectos glassmorphism.
-Version: 1.4.1
+Version: 1.4.2
 Requires at least: 5.9
 Tested up to: 6.4
 Requires PHP: 7.4
@@ -1562,4 +1562,335 @@ p {
 .evost_seats_in_cart {
     overflow: visible !important;
     max-height: none !important;
+}
+
+/* ===================================
+   WOOCOMMERCE CART PAGE - LIQUID GLASS
+   =================================== */
+
+/* Contenedor principal del carrito */
+.wc-block-cart {
+    padding: 20px !important;
+}
+
+/* Tabla de items del carrito */
+.wc-block-cart-items {
+    width: 100% !important;
+    border-collapse: separate !important;
+    border-spacing: 0 15px !important;
+}
+
+/* Header de la tabla */
+.wc-block-cart-items__header th {
+    background: rgba(255, 193, 7, 0.2) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    padding: 15px !important;
+    color: #1a1a2e !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    font-size: 12px !important;
+}
+
+.wc-block-cart-items__header th:first-child {
+    border-radius: 12px 0 0 12px !important;
+}
+
+.wc-block-cart-items__header th:last-child {
+    border-radius: 0 12px 12px 0 !important;
+}
+
+/* Filas de productos */
+.wc-block-cart-items__row {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.wc-block-cart-items__row td {
+    padding: 20px 15px !important;
+    vertical-align: top !important;
+}
+
+.wc-block-cart-items__row td:first-child {
+    border-radius: 16px 0 0 16px !important;
+}
+
+.wc-block-cart-items__row td:last-child {
+    border-radius: 0 16px 16px 0 !important;
+}
+
+/* Imagen del producto */
+.wc-block-cart-item__image img {
+    border-radius: 12px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Nombre del producto en carrito */
+.wc-block-cart-item__product .wc-block-components-product-name {
+    font-size: 1.2rem !important;
+    color: #1a1a2e !important;
+    font-weight: 700 !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+}
+
+/* Precios del item */
+.wc-block-cart-item__prices .wc-block-components-product-price__value {
+    color: var(--ttr-red) !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+}
+
+/* Detalles del producto (Event Time, Section, etc) */
+.wc-block-cart-item__product .wc-block-components-product-details {
+    margin-top: 12px !important;
+}
+
+.wc-block-cart-item__product .wc-block-components-product-details li {
+    background: rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    border-radius: 8px !important;
+    padding: 8px 12px !important;
+    margin-bottom: 6px !important;
+    font-size: 13px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Ocultar el campo "t" técnico en carrito */
+.wc-block-components-product-details__t {
+    display: none !important;
+}
+
+/* Selector de cantidad */
+.wc-block-components-quantity-selector {
+    background: rgba(255, 255, 255, 0.5) !important;
+    border-radius: 10px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.wc-block-components-quantity-selector__input {
+    background: transparent !important;
+    border: none !important;
+    text-align: center !important;
+    font-weight: 600 !important;
+    color: #1a1a2e !important;
+    width: 50px !important;
+}
+
+.wc-block-components-quantity-selector__button {
+    background: transparent !important;
+    border: none !important;
+    padding: 8px 12px !important;
+    color: #1a1a2e !important;
+    font-size: 16px !important;
+    cursor: pointer !important;
+}
+
+.wc-block-components-quantity-selector__button:hover:not(:disabled) {
+    background: rgba(255, 193, 7, 0.3) !important;
+}
+
+/* Botón eliminar */
+.wc-block-cart-item__remove-link {
+    background: transparent !important;
+    border: none !important;
+    color: var(--ttr-red) !important;
+    font-size: 13px !important;
+    cursor: pointer !important;
+    padding: 8px 0 !important;
+    margin-top: 10px !important;
+    display: block !important;
+    text-decoration: underline !important;
+}
+
+.wc-block-cart-item__remove-link:hover {
+    color: var(--ttr-red-dark) !important;
+}
+
+/* Total del item */
+.wc-block-cart-item__total .wc-block-components-product-price__value {
+    color: #1a1a2e !important;
+    font-weight: 800 !important;
+    font-size: 1.2rem !important;
+}
+
+/* Sidebar del carrito */
+.wc-block-cart__sidebar {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding: 25px !important;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2) !important;
+}
+
+/* Título del total del carrito */
+.wc-block-cart__totals-title {
+    color: #1a1a2e !important;
+    font-weight: 700 !important;
+    font-size: 1.3rem !important;
+    margin-bottom: 20px !important;
+    padding-bottom: 15px !important;
+    border-bottom: 2px solid rgba(255, 193, 7, 0.3) !important;
+}
+
+/* Botón proceder al pago */
+.wc-block-cart__submit-button {
+    background: linear-gradient(135deg, var(--ttr-red), var(--ttr-red-dark)) !important;
+    border: none !important;
+    border-radius: 16px !important;
+    padding: 18px 35px !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    color: white !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(232, 31, 38, 0.3) !important;
+    width: 100% !important;
+}
+
+.wc-block-cart__submit-button:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 30px rgba(232, 31, 38, 0.5) !important;
+}
+
+/* Contenedor sticky del botón - quitar fondo blanco */
+.wc-block-cart__submit-container--sticky {
+    background: transparent !important;
+}
+
+/* ===================================
+   DESCRIPCIÓN EVENTO - FIX TEXTO DESVANECIDO
+   =================================== */
+
+/* Quitar cualquier máscara/gradiente que oculte contenido */
+.page-content,
+.entry-content,
+.event_description,
+.eventon_desc_in,
+.evocard_details,
+.evcal_evdata_cell {
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+}
+
+/* Asegurar opacidad completa del texto */
+.page-content p,
+.page-content ul,
+.page-content li,
+.page-content h1,
+.page-content h2,
+.page-content h3,
+.page-content h4,
+.page-content h5,
+.page-content h6,
+.page-content span,
+.eventon_desc_in p,
+.eventon_desc_in ul,
+.eventon_desc_in li,
+.event_description p {
+    opacity: 1 !important;
+    color: #333 !important;
+}
+
+/* Quitar fade-out en descripción */
+.eventon_desc_in::after,
+.event_description::after,
+.evocard_details::after {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+}
+
+/* ===================================
+   MOBILE FIX - SIMPLIFICAR CAPAS
+   =================================== */
+
+@media (max-width: 768px) {
+    /* Simplificar fondo del body en móvil */
+    body::before {
+        opacity: 0.3 !important;
+    }
+    
+    /* Desactivar animación liquid en móvil para mejor rendimiento */
+    .liquid-glass::before {
+        display: none !important;
+    }
+    
+    /* Carrito responsive */
+    .wc-block-cart {
+        padding: 10px !important;
+    }
+    
+    .wc-block-cart-items {
+        display: block !important;
+    }
+    
+    .wc-block-cart-items thead {
+        display: none !important;
+    }
+    
+    .wc-block-cart-items__row {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        padding: 15px !important;
+        margin-bottom: 15px !important;
+        border-radius: 16px !important;
+    }
+    
+    .wc-block-cart-item__image {
+        flex: 0 0 80px !important;
+        padding: 0 !important;
+    }
+    
+    .wc-block-cart-item__image img {
+        width: 80px !important;
+        height: 80px !important;
+        object-fit: cover !important;
+    }
+    
+    .wc-block-cart-item__product {
+        flex: 1 !important;
+        padding-left: 15px !important;
+        border-radius: 0 !important;
+    }
+    
+    .wc-block-cart-item__total {
+        flex: 0 0 100% !important;
+        padding-top: 15px !important;
+        margin-top: 15px !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+        text-align: right !important;
+        border-radius: 0 !important;
+    }
+    
+    .wc-block-cart__sidebar {
+        margin-top: 20px !important;
+        padding: 20px !important;
+    }
+    
+    /* Checkout - quitar efectos pesados en móvil */
+    .wc-block-components-checkout-step {
+        backdrop-filter: blur(5px) !important;
+        -webkit-backdrop-filter: blur(5px) !important;
+    }
+    
+    .wc-block-checkout__main,
+    .wc-block-checkout__sidebar {
+        backdrop-filter: blur(5px) !important;
+        -webkit-backdrop-filter: blur(5px) !important;
+    }
+    
+    .mp-checkout-custom-card-form {
+        backdrop-filter: blur(5px) !important;
+        -webkit-backdrop-filter: blur(5px) !important;
+    }
 }
