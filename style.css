@@ -4,7 +4,7 @@ Theme URI: https://github.com/Alecsiomatic/ticket-to-ride-theme
 Author: Alecsiomatic
 Author URI: https://github.com/Alecsiomatic
 Description: Un tema moderno con efectos de vidrio líquido (liquid glass) inspirado en Ticket to Ride. Colores vibrantes amarillo dorado y rojo con efectos glassmorphism.
-Version: 1.3.1
+Version: 1.4.0
 Requires at least: 5.9
 Tested up to: 6.4
 Requires PHP: 7.4
@@ -967,4 +967,409 @@ p {
     border-radius: 12px !important;
     border: 1px solid rgba(16, 185, 129, 0.4) !important;
     padding: 15px !important;
+}
+
+/* ===================================
+   WOOCOMMERCE CHECKOUT - LIQUID GLASS
+   =================================== */
+
+/* Contenedor principal del checkout */
+.wc-block-checkout {
+    gap: 30px !important;
+}
+
+/* Panel principal del formulario */
+.wc-block-checkout__main {
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-radius: 24px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15) !important;
+    padding: 30px !important;
+}
+
+/* Sidebar con resumen del pedido */
+.wc-block-checkout__sidebar {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-radius: 24px !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2) !important;
+    padding: 25px !important;
+}
+
+/* Fieldsets - Secciones del checkout */
+.wc-block-components-checkout-step {
+    background: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    padding: 25px !important;
+    margin-bottom: 20px !important;
+}
+
+/* Títulos de secciones */
+.wc-block-components-checkout-step__title {
+    color: #1a1a2e !important;
+    font-weight: 700 !important;
+    font-size: 1.25rem !important;
+    margin-bottom: 10px !important;
+}
+
+/* Inputs de texto */
+.wc-block-components-text-input input,
+.wc-block-components-address-form input,
+.wc-blocks-components-select__select {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 12px !important;
+    padding: 14px 16px !important;
+    font-size: 15px !important;
+    color: #1a1a2e !important;
+    transition: all 0.3s ease !important;
+}
+
+.wc-block-components-text-input input:focus,
+.wc-block-components-address-form input:focus,
+.wc-blocks-components-select__select:focus {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-color: var(--ttr-yellow) !important;
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.3) !important;
+    outline: none !important;
+}
+
+/* Labels */
+.wc-block-components-text-input label,
+.wc-blocks-components-select__label {
+    color: #1a1a2e !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+}
+
+/* Radio buttons - Métodos de pago */
+.wc-block-components-radio-control-accordion-option {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    margin-bottom: 10px !important;
+    overflow: hidden !important;
+}
+
+.wc-block-components-radio-control-accordion-option--checked-option-highlighted {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: var(--ttr-yellow) !important;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2) !important;
+}
+
+.wc-block-components-radio-control__label {
+    padding: 15px !important;
+    color: #1a1a2e !important;
+    font-weight: 600 !important;
+}
+
+/* Contenido expandido de Mercado Pago */
+.wc-block-components-radio-control-accordion-content {
+    background: rgba(255, 255, 255, 0.08) !important;
+    padding: 20px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Wallet button de Mercado Pago */
+.mp-wallet-button-container {
+    background: linear-gradient(135deg, rgba(0, 158, 227, 0.15), rgba(0, 158, 227, 0.05)) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(0, 158, 227, 0.3) !important;
+    padding: 20px !important;
+    margin-bottom: 20px !important;
+}
+
+.mp-wallet-button-button button {
+    background: linear-gradient(135deg, #009ee3, #007bba) !important;
+    border: none !important;
+    border-radius: 12px !important;
+    color: white !important;
+    padding: 14px 28px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+.mp-wallet-button-button button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(0, 158, 227, 0.4) !important;
+}
+
+/* Formulario de tarjeta de MP */
+.mp-checkout-custom-card-form {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    padding: 25px !important;
+}
+
+.mp-checkout-custom-card-form-title {
+    color: #1a1a2e !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 20px !important;
+}
+
+.mp-checkout-custom-card-input {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border-radius: 10px !important;
+    border: 1px solid rgba(200, 200, 200, 0.5) !important;
+    transition: all 0.3s ease !important;
+}
+
+.mp-checkout-custom-card-input:focus-within {
+    border-color: var(--ttr-yellow) !important;
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.2) !important;
+}
+
+/* Available payments section */
+.mp-checkout-custom-available-payments {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    margin-bottom: 20px !important;
+}
+
+.mp-checkout-custom-available-payments-header {
+    padding: 15px !important;
+}
+
+/* Order Summary */
+.wp-block-woocommerce-checkout-order-summary-block {
+    background: transparent !important;
+}
+
+.wc-block-components-checkout-order-summary__title {
+    background: rgba(255, 193, 7, 0.2) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border-radius: 12px !important;
+    padding: 15px 20px !important;
+    margin-bottom: 20px !important;
+}
+
+.wc-block-components-checkout-order-summary__title-text {
+    color: #1a1a2e !important;
+    font-weight: 700 !important;
+    font-size: 1.2rem !important;
+}
+
+.wc-block-components-checkout-order-summary__title-price {
+    color: var(--ttr-red) !important;
+    font-weight: 800 !important;
+    font-size: 1.3rem !important;
+}
+
+/* Producto en el resumen */
+.wc-block-components-order-summary-item {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    padding: 15px !important;
+    margin-bottom: 15px !important;
+}
+
+.wc-block-components-order-summary-item__image {
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+.wc-block-components-order-summary-item__quantity {
+    background: var(--ttr-red) !important;
+    color: white !important;
+    font-weight: 700 !important;
+}
+
+.wc-block-components-product-name {
+    color: #1a1a2e !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+}
+
+/* Detalles del producto */
+.wc-block-components-product-details {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 10px 0 0 !important;
+}
+
+.wc-block-components-product-details li {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(5px) !important;
+    border-radius: 6px !important;
+    padding: 6px 10px !important;
+    margin-bottom: 5px !important;
+    font-size: 13px !important;
+}
+
+.wc-block-components-product-details__name {
+    color: #666 !important;
+    font-weight: 500 !important;
+}
+
+.wc-block-components-product-details__value {
+    color: #1a1a2e !important;
+    font-weight: 600 !important;
+}
+
+/* Totales */
+.wc-block-components-totals-item {
+    padding: 12px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.wc-block-components-totals-item__label {
+    color: #1a1a2e !important;
+    font-weight: 500 !important;
+}
+
+.wc-block-components-totals-item__value {
+    color: #1a1a2e !important;
+    font-weight: 700 !important;
+}
+
+.wc-block-components-totals-footer-item {
+    background: rgba(255, 193, 7, 0.15) !important;
+    border-radius: 12px !important;
+    padding: 15px !important;
+    margin-top: 15px !important;
+    border: none !important;
+}
+
+.wc-block-components-totals-footer-item .wc-block-components-totals-item__label {
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+}
+
+.wc-block-components-totals-footer-item-tax-value {
+    color: var(--ttr-red) !important;
+    font-size: 1.4rem !important;
+    font-weight: 800 !important;
+}
+
+/* Cupones */
+.wc-block-components-totals-coupon {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 10px !important;
+    padding: 12px !important;
+}
+
+.wc-block-components-panel__button {
+    color: #1a1a2e !important;
+    font-weight: 500 !important;
+}
+
+/* Botón de realizar pedido */
+.wc-block-components-checkout-place-order-button {
+    background: linear-gradient(135deg, var(--ttr-red), var(--ttr-red-dark)) !important;
+    border: none !important;
+    border-radius: 16px !important;
+    padding: 18px 35px !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(232, 31, 38, 0.3) !important;
+}
+
+.wc-block-components-checkout-place-order-button:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 30px rgba(232, 31, 38, 0.5) !important;
+}
+
+/* Botón volver al carrito */
+.wc-block-components-checkout-return-to-cart-button {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding: 14px 20px !important;
+    color: #1a1a2e !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.wc-block-components-checkout-return-to-cart-button:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Checkbox */
+.wc-block-components-checkbox__input {
+    accent-color: var(--ttr-yellow) !important;
+}
+
+.wc-block-components-checkbox__label {
+    color: #1a1a2e !important;
+}
+
+/* Address card */
+.wc-block-components-address-card {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding: 15px !important;
+}
+
+.wc-block-components-address-card__edit {
+    background: var(--ttr-yellow) !important;
+    color: #1a1a2e !important;
+    border-radius: 8px !important;
+    padding: 8px 16px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+.wc-block-components-address-card__edit:hover {
+    background: var(--ttr-yellow-dark) !important;
+}
+
+/* Términos y condiciones */
+.wc-block-checkout__terms {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(8px) !important;
+    border-radius: 12px !important;
+    padding: 15px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+/* MP Terms */
+.mp-terms-and-conditions-container {
+    padding: 15px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-radius: 10px !important;
+    margin-top: 15px !important;
+}
+
+.mp-terms-and-conditions-link {
+    color: #009ee3 !important;
+    font-weight: 600 !important;
+}
+
+/* Ocultar el item "t" del carrito (metadata técnica) */
+.wc-block-components-product-details__t {
+    display: none !important;
 }
