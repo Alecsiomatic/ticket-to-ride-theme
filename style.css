@@ -4,7 +4,7 @@ Theme URI: https://github.com/Alecsiomatic/ticket-to-ride-theme
 Author: Alecsiomatic
 Author URI: https://github.com/Alecsiomatic
 Description: Un tema moderno con efectos de vidrio líquido (liquid glass) inspirado en Ticket to Ride. Colores vibrantes amarillo dorado y rojo con efectos glassmorphism.
-Version: 1.2.0
+Version: 1.3.0
 Requires at least: 5.9
 Tested up to: 6.4
 Requires PHP: 7.4
@@ -838,4 +838,133 @@ p {
 
 .p-20 {
     padding: 20px;
+}
+
+/* ==================================================
+   EVENTON - EVENTOS SIEMPRE EXPANDIDOS Y ESTILOS
+   ================================================== */
+
+/* Forzar que las tarjetas de evento siempre estén abiertas */
+.event_description.evcal_eventcard {
+    display: block !important;
+    max-height: none !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Ocultar el botón de expandir/colapsar ya que siempre está abierto */
+.eventon_list_event .desc_trig {
+    cursor: default !important;
+}
+
+/* Ocultar el indicador de más/menos */
+.evobtn_details_show_more,
+.ev_more_arrow {
+    display: none !important;
+}
+
+/* Mantener contenido de descripción visible */
+.evcal_evdata_cell.shorter_desc .eventon_full_description {
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+/* Estilos para el mapa de asientos EventON Seats */
+.evost_inline_seat_map {
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    padding: 20px !important;
+}
+
+.evost_seat_layout_outter {
+    border-radius: 15px !important;
+    overflow: hidden !important;
+}
+
+/* Estilo liquid glass para las leyendas de asientos */
+.evost_seat_legends {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-radius: 12px !important;
+    padding: 10px 15px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.evost_seat_legends_box {
+    background: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Controles de vista del mapa */
+.evost_view_control span {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    transition: all 0.3s ease !important;
+}
+
+.evost_view_control span:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+    transform: scale(1.05) !important;
+}
+
+/* Estilo para el card de evento */
+.eventon_list_event .evocard_box {
+    background: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    margin-bottom: 15px !important;
+    padding: 20px !important;
+}
+
+/* Estilo para botones de carrito */
+.evotx_cart_actions .evcal_btn {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.8), rgba(168, 85, 247, 0.8)) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    padding: 12px 24px !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+}
+
+.evotx_cart_actions .evcal_btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4) !important;
+}
+
+/* Tooltip de asiento */
+.evost_tooltip {
+    background: rgba(0, 0, 0, 0.85) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border-radius: 10px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+}
+
+/* Mensaje de agregar al carrito */
+.evotx_addtocart_msg {
+    background: rgba(16, 185, 129, 0.2) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(16, 185, 129, 0.4) !important;
+    padding: 15px !important;
 }

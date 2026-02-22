@@ -233,4 +233,128 @@
         });
     });
     
+    // ==================================================
+    // EVENTON - Traducciones al Español
+    // ==================================================
+    function translateEventON() {
+        // Diccionario de traducciones
+        var translations = {
+            // Títulos y encabezados
+            'Event Details': 'Detalles del Evento',
+            'Time': 'Horario',
+            'Ticket Section Title': 'Sección de Boletos',
+            'Tickets': 'Boletos',
+            
+            // Leyendas de asientos
+            'Seat Legends': 'Leyenda de Asientos',
+            'Unavailable (Sold Out)': 'No Disponible (Agotado)',
+            'Unavailable': 'No Disponible',
+            'Sold Out': 'Agotado',
+            "In someone's cart": 'En el carrito de otro usuario',
+            'Your selected seats': 'Tus asientos seleccionados',
+            'Seats in your cart': 'Asientos en tu carrito',
+            'Reserved': 'Reservado',
+            'Handicap Accessible': 'Acceso para Discapacitados',
+            
+            // Controles del mapa
+            'Reset Map': 'Restablecer Mapa',
+            'Loading Image..': 'Cargando Imagen...',
+            'Loading..': 'Cargando...',
+            
+            // Botones de carrito
+            'View Cart': 'Ver Carrito',
+            'Checkout': 'Finalizar Compra',
+            'Add to Cart': 'Agregar al Carrito',
+            'Added to cart': 'Agregado al Carrito',
+            
+            // Mensajes
+            'Ticket could not be added to cart, try again later!': '¡No se pudo agregar el boleto al carrito, intenta más tarde!',
+            'Quantity of Zero can not be added to cart!': '¡No se puede agregar una cantidad de cero al carrito!',
+            'Price must be higher than minimum!': '¡El precio debe ser mayor al mínimo!',
+            'Seats added to cart will expire in 15 minutes of inactivity in cart.': 'Los asientos agregados al carrito expirarán después de 15 minutos de inactividad.',
+            
+            // Más/Menos
+            'more': 'más',
+            'less': 'menos',
+            'Show More': 'Mostrar Más',
+            'Show Less': 'Mostrar Menos'
+        };
+        
+        // Función para reemplazar texto en elementos
+        function replaceText(selector) {
+            $(selector).each(function() {
+                var $el = $(this);
+                
+                // Para elementos con texto directo
+                $el.contents().filter(function() {
+                    return this.nodeType === 3; // Text nodes
+                }).each(function() {
+                    var text = this.textContent.trim();
+                    if (translations[text]) {
+                        this.textContent = this.textContent.replace(text, translations[text]);
+                    }
+                });
+                
+                // Para el texto del elemento completo
+                var elementText = $el.text().trim();
+                if (translations[elementText]) {
+                    $el.text(translations[elementText]);
+                }
+            });
+        }
+        
+        // Aplicar traducciones a elementos específicos de EventON
+        replaceText('.evo_h3');
+        replaceText('.legends_trig');
+        replaceText('.evost_seat_legends_box span');
+        replaceText('.evost_view_control span');
+        replaceText('.evotx_cart_actions .evcal_btn');
+        replaceText('.ev_more_text');
+        replaceText('.evost_seats_footer p');
+        replaceText('.evocard_main_image_hold');
+        
+        // Traducir atributos data-txt y data-t
+        $('[data-txt="less"]').attr('data-txt', 'menos');
+        $('[data-txt="more"]').attr('data-txt', 'más');
+        $('[data-t="Loading Image.."]').attr('data-t', 'Cargando Imagen...');
+        
+        // Forzar que las tarjetas de evento estén abiertas
+        $('.event_description.evcal_eventcard').addClass('open').show();
+        
+        // Forzar que el contenido esté visible
+        $('.eventon_full_description').css({
+            'max-height': 'none',
+            'overflow': 'visible'
+        });
+    }
+    
+    // Ejecutar traducciones cuando el DOM esté listo
+    $(document).ready(function() {
+        // Ejecutar inmediatamente
+        setTimeout(translateEventON, 100);
+        
+        // Ejecutar de nuevo después de que AJAX cargue contenido
+        setTimeout(translateEventON, 500);
+        setTimeout(translateEventON, 1500);
+        
+        // Observar cambios en el DOM para contenido dinámico
+        if (typeof MutationObserver !== 'undefined') {
+            var observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.addedNodes.length > 0) {
+                        setTimeout(translateEventON, 50);
+                    }
+                });
+            });
+            
+            // Observar el body para cambios
+            if (document.body) {
+                observer.observe(document.body, {
+                    childList: true,
+                    subtree: true
+                });
+            }
+        }
+    });
+    
 })(jQuery);

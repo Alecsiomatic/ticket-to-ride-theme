@@ -14,7 +14,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Constantes del tema
-define('TTR_THEME_VERSION', '1.2.0');
+define('TTR_THEME_VERSION', '1.3.0');
 define('TTR_THEME_DIR', get_template_directory());
 define('TTR_THEME_URI', get_template_directory_uri());
 
