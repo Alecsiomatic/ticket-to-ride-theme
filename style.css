@@ -4,7 +4,7 @@ Theme URI: https://github.com/Alecsiomatic/ticket-to-ride-theme
 Author: Alecsiomatic
 Author URI: https://github.com/Alecsiomatic
 Description: Un tema moderno con efectos de vidrio líquido (liquid glass) inspirado en Ticket to Ride. Colores vibrantes amarillo dorado y rojo con efectos glassmorphism.
-Version: 1.4.2
+Version: 1.4.3
 Requires at least: 5.9
 Tested up to: 6.4
 Requires PHP: 7.4
@@ -1397,10 +1397,13 @@ p {
     max-width: 400px !important;
 }
 
-/* Responsive para móvil */
+/* Responsive para móvil - CHECKOUT COMPLETO */
 @media (max-width: 768px) {
+    /* ===== LAYOUT PRINCIPAL DEL CHECKOUT ===== */
     .wc-block-components-sidebar-layout.wc-block-checkout {
         flex-direction: column !important;
+        padding: 0 !important;
+        gap: 15px !important;
     }
     
     .wc-block-components-sidebar-layout.wc-block-checkout .wc-block-components-main,
@@ -1411,77 +1414,125 @@ p {
     }
     
     .wc-block-checkout__main {
-        padding: 20px !important;
-        border-radius: 16px !important;
+        padding: 10px !important;
+        border-radius: 12px !important;
+        background: transparent !important;
     }
     
     .wc-block-checkout__sidebar {
-        padding: 20px !important;
-        border-radius: 16px !important;
-        margin-top: 20px !important;
-    }
-    
-    .wc-block-components-checkout-step {
         padding: 15px !important;
+        border-radius: 12px !important;
+        margin-top: 10px !important;
     }
     
-    /* MP Wallet button responsive */
+    /* ===== FIELDSETS / SECCIONES ===== */
+    .wc-block-components-checkout-step {
+        padding: 12px !important;
+        margin-bottom: 12px !important;
+        border-radius: 12px !important;
+    }
+    
+    .wc-block-components-checkout-step__title {
+        font-size: 1rem !important;
+    }
+    
+    /* ===== INPUTS DEL FORMULARIO ===== */
+    .wc-block-components-text-input input,
+    .wc-block-components-address-form input,
+    .wc-blocks-components-select__select {
+        padding: 12px !important;
+        font-size: 16px !important; /* Evita zoom en iOS */
+        border-radius: 10px !important;
+    }
+    
+    .wc-block-components-text-input label,
+    .wc-blocks-components-select__label {
+        font-size: 13px !important;
+    }
+    
+    /* ===== MERCADO PAGO - WALLET BUTTON ===== */
     .mp-wallet-button-container {
         padding: 15px !important;
+        display: flex !important;
         flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        border-radius: 12px !important;
+        margin-bottom: 15px !important;
     }
     
     .mp-wallet-button-container img {
-        max-width: 150px !important;
+        max-width: 100px !important;
+        height: auto !important;
         margin-bottom: 10px !important;
     }
     
+    .mp-wallet-button-title {
+        margin-bottom: 8px !important;
+    }
+    
     .mp-wallet-button-title span {
-        font-size: 14px !important;
+        font-size: 15px !important;
+        font-weight: 700 !important;
     }
     
     .mp-wallet-button-description {
-        font-size: 12px !important;
-        line-height: 1.4 !important;
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 12px !important;
+        color: #555 !important;
+    }
+    
+    .mp-wallet-button-button {
+        width: 100% !important;
     }
     
     .mp-wallet-button-button button {
         width: 100% !important;
-        padding: 12px 20px !important;
-        font-size: 14px !important;
+        padding: 14px 20px !important;
+        font-size: 15px !important;
+        border-radius: 10px !important;
     }
     
-    /* Formulario MP responsive */
-    .mp-checkout-custom-card-form {
-        padding: 15px !important;
-    }
-    
-    .mp-checkout-custom-dual-column-row {
-        flex-direction: column !important;
-    }
-    
-    .mp-checkout-custom-card-column {
-        width: 100% !important;
+    /* ===== MERCADO PAGO - TARJETAS DISPONIBLES ===== */
+    .mp-checkout-custom-available-payments {
+        padding: 12px !important;
+        border-radius: 10px !important;
         margin-bottom: 15px !important;
     }
     
-    .mp-checkout-custom-left-card-input {
-        margin-right: 0 !important;
+    .mp-checkout-custom-available-payments-header {
+        padding: 8px !important;
     }
     
-    /* Available payments responsive */
-    .mp-checkout-custom-available-payments {
+    .mp-checkout-custom-available-payments-text {
+        font-size: 13px !important;
+    }
+    
+    .mp-payment-methods-container {
         padding: 10px !important;
     }
     
+    .mp-payment-method-type-container {
+        margin-bottom: 12px !important;
+    }
+    
+    .mp-payment-methods-title {
+        font-size: 13px !important;
+        margin-bottom: 8px !important;
+    }
+    
     .mp-payment-methods-content {
+        display: flex !important;
         flex-wrap: wrap !important;
-        gap: 8px !important;
+        gap: 6px !important;
+        justify-content: flex-start !important;
     }
     
     .mp-payment-method-logo-container {
-        width: 40px !important;
-        height: 25px !important;
+        width: 35px !important;
+        height: 22px !important;
+        padding: 2px !important;
     }
     
     .mp-payment-method-logo-image {
@@ -1489,21 +1540,183 @@ p {
         height: auto !important;
     }
     
-    /* Botones de acción responsive */
+    .mp-payment-methods-badge {
+        font-size: 10px !important;
+        padding: 2px 6px !important;
+    }
+    
+    /* ===== MERCADO PAGO - FORMULARIO DE TARJETA ===== */
+    .mp-checkout-custom-card-form {
+        padding: 15px !important;
+        border-radius: 12px !important;
+    }
+    
+    .mp-checkout-custom-card-form-title {
+        font-size: 15px !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .mp-checkout-custom-card-row {
+        margin-bottom: 12px !important;
+    }
+    
+    .mp-input-label {
+        font-size: 13px !important;
+        margin-bottom: 6px !important;
+    }
+    
+    .mp-checkout-custom-card-input {
+        border-radius: 10px !important;
+        min-height: 48px !important;
+    }
+    
+    .mp-checkout-custom-card-input input,
+    .mp-checkout-custom-card-input iframe {
+        min-height: 44px !important;
+    }
+    
+    input.mp-card-holder-name {
+        padding: 14px 12px !important;
+        font-size: 16px !important; /* Evita zoom en iOS */
+        border-radius: 10px !important;
+    }
+    
+    /* Vencimiento y CVV en 2 columnas pero mejor distribuido */
+    .mp-checkout-custom-dual-column-row {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 10px !important;
+    }
+    
+    .mp-checkout-custom-card-column {
+        flex: 1 !important;
+        width: auto !important;
+        margin-bottom: 0 !important;
+    }
+    
+    .mp-checkout-custom-left-card-input {
+        margin-right: 0 !important;
+    }
+    
+    /* ===== TÉRMINOS Y CONDICIONES ===== */
+    .mp-terms-and-conditions-container {
+        font-size: 12px !important;
+        text-align: center !important;
+        padding: 10px !important;
+    }
+    
+    /* ===== RADIO BUTTONS - MÉTODOS DE PAGO ===== */
+    .wc-block-components-radio-control-accordion-option {
+        margin-bottom: 8px !important;
+        border-radius: 10px !important;
+    }
+    
+    .wc-block-components-radio-control__label {
+        padding: 12px !important;
+        font-size: 14px !important;
+    }
+    
+    .wc-block-components-radio-control-accordion-content {
+        padding: 12px !important;
+    }
+    
+    /* ===== ORDER SUMMARY EN MÓVIL ===== */
+    .wc-block-components-checkout-order-summary__title {
+        padding: 12px !important;
+        border-radius: 10px !important;
+    }
+    
+    .wc-block-components-checkout-order-summary__title-text {
+        font-size: 14px !important;
+    }
+    
+    .wc-block-components-checkout-order-summary__title-price {
+        font-size: 16px !important;
+    }
+    
+    .wc-block-components-order-summary-item {
+        padding: 10px !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .wc-block-components-order-summary-item__image img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    .wc-block-components-order-summary-item__description .wc-block-components-product-name {
+        font-size: 14px !important;
+    }
+    
+    .wc-block-components-order-summary-item .wc-block-components-product-details li {
+        padding: 4px 8px !important;
+        font-size: 11px !important;
+    }
+    
+    /* ===== TOTALES ===== */
+    .wc-block-components-totals-item {
+        padding: 10px 0 !important;
+    }
+    
+    .wc-block-components-totals-item__label {
+        font-size: 14px !important;
+    }
+    
+    .wc-block-components-totals-footer-item {
+        padding: 12px !important;
+        border-radius: 10px !important;
+    }
+    
+    .wc-block-components-totals-footer-item-tax-value {
+        font-size: 1.2rem !important;
+    }
+    
+    /* ===== BOTONES DE ACCIÓN ===== */
     .wc-block-checkout__actions_row {
-        flex-direction: column !important;
-        gap: 15px !important;
+        flex-direction: column-reverse !important;
+        gap: 12px !important;
+        padding: 15px 0 !important;
     }
     
     .wc-block-components-checkout-place-order-button {
         width: 100% !important;
-        padding: 16px 25px !important;
+        padding: 16px 20px !important;
+        font-size: 15px !important;
+        border-radius: 12px !important;
     }
     
     .wc-block-components-checkout-return-to-cart-button {
         width: 100% !important;
         text-align: center !important;
         justify-content: center !important;
+        padding: 12px !important;
+        font-size: 14px !important;
+    }
+    
+    /* ===== ADDRESS CARD ===== */
+    .wc-block-components-address-card {
+        padding: 12px !important;
+        border-radius: 10px !important;
+    }
+    
+    .wc-block-components-address-card address {
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+    }
+    
+    .wc-block-components-address-card__edit {
+        padding: 6px 12px !important;
+        font-size: 13px !important;
+    }
+    
+    /* ===== QUITAR SIDEBAR DUPLICADO EN MÓVIL ===== */
+    .wc-block-checkout__sidebar.is-sticky {
+        display: none !important;
+    }
+    
+    /* El resumen aparece inline en el main */
+    .checkout-order-summary-block-fill-wrapper {
+        display: block !important;
     }
 }
 
@@ -1811,18 +2024,51 @@ p {
 }
 
 /* ===================================
-   MOBILE FIX - SIMPLIFICAR CAPAS
+   MOBILE FIX - SIMPLIFICAR CAPAS Y BARRAS
    =================================== */
 
 @media (max-width: 768px) {
-    /* Simplificar fondo del body en móvil */
+    /* QUITAR las barras decorativas laterales en móvil */
     body::before {
-        opacity: 0.3 !important;
+        display: none !important;
+    }
+    
+    /* Fondo más limpio en móvil */
+    body {
+        background: linear-gradient(180deg, var(--ttr-yellow) 0%, #f5f5f5 100%) !important;
     }
     
     /* Desactivar animación liquid en móvil para mejor rendimiento */
     .liquid-glass::before {
         display: none !important;
+    }
+    
+    /* Liquid glass más sutil en móvil */
+    .liquid-glass {
+        backdrop-filter: blur(5px) !important;
+        -webkit-backdrop-filter: blur(5px) !important;
+    }
+    
+    /* Page content full width */
+    .page-content,
+    .entry-content {
+        padding: 10px !important;
+        margin: 0 !important;
+    }
+    
+    /* Elementor container fix */
+    .elementor-widget-container {
+        padding: 0 !important;
+    }
+    
+    .e-con-inner {
+        padding: 0 10px !important;
+    }
+    
+    /* WooCommerce checkout container */
+    .wp-block-woocommerce-checkout {
+        padding: 0 !important;
+        margin: 0 !important;
     }
     
     /* Carrito responsive */
@@ -1843,44 +2089,50 @@ p {
         flex-wrap: wrap !important;
         padding: 15px !important;
         margin-bottom: 15px !important;
-        border-radius: 16px !important;
+        border-radius: 12px !important;
     }
     
     .wc-block-cart-item__image {
-        flex: 0 0 80px !important;
+        flex: 0 0 70px !important;
         padding: 0 !important;
     }
     
     .wc-block-cart-item__image img {
-        width: 80px !important;
-        height: 80px !important;
+        width: 70px !important;
+        height: 70px !important;
         object-fit: cover !important;
     }
     
     .wc-block-cart-item__product {
         flex: 1 !important;
-        padding-left: 15px !important;
+        padding-left: 12px !important;
         border-radius: 0 !important;
+    }
+    
+    .wc-block-cart-item__product .wc-block-components-product-name {
+        font-size: 1rem !important;
     }
     
     .wc-block-cart-item__total {
         flex: 0 0 100% !important;
-        padding-top: 15px !important;
-        margin-top: 15px !important;
+        padding-top: 12px !important;
+        margin-top: 12px !important;
         border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
         text-align: right !important;
         border-radius: 0 !important;
     }
     
     .wc-block-cart__sidebar {
-        margin-top: 20px !important;
-        padding: 20px !important;
+        margin-top: 15px !important;
+        padding: 15px !important;
+        border-radius: 12px !important;
     }
     
-    /* Checkout - quitar efectos pesados en móvil */
+    /* Checkout - reducir blur pesado */
     .wc-block-components-checkout-step {
         backdrop-filter: blur(5px) !important;
         -webkit-backdrop-filter: blur(5px) !important;
+        background: rgba(255, 255, 255, 0.85) !important;
     }
     
     .wc-block-checkout__main,
@@ -1892,5 +2144,21 @@ p {
     .mp-checkout-custom-card-form {
         backdrop-filter: blur(5px) !important;
         -webkit-backdrop-filter: blur(5px) !important;
+        background: rgba(255, 255, 255, 0.9) !important;
+    }
+    
+    .mp-wallet-button-container {
+        background: linear-gradient(135deg, rgba(0, 158, 227, 0.1), rgba(0, 158, 227, 0.05)) !important;
+        backdrop-filter: blur(5px) !important;
+        -webkit-backdrop-filter: blur(5px) !important;
+    }
+    
+    /* Inputs más claros en móvil */
+    .mp-checkout-custom-card-input {
+        background: white !important;
+    }
+    
+    input.mp-card-holder-name {
+        background: white !important;
     }
 }
