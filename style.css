@@ -4,7 +4,7 @@ Theme URI: https://github.com/Alecsiomatic/ticket-to-ride-theme
 Author: Alecsiomatic
 Author URI: https://github.com/Alecsiomatic
 Description: Un tema moderno con efectos de vidrio líquido (liquid glass) inspirado en Ticket to Ride. Colores vibrantes amarillo dorado y rojo con efectos glassmorphism.
-Version: 1.4.6
+Version: 1.4.7
 Requires at least: 5.9
 Tested up to: 6.4
 Requires PHP: 7.4
@@ -2699,4 +2699,31 @@ input.mp-card-holder-name {
     .tgwc-woocommerce-MyAccount-navigation-wrap li a svg {
         order: 1 !important;
     }
+}
+
+/* ===================================
+   OCULTAR TÍTULO DE PÁGINA (ELEMENTOR)
+   =================================== */
+
+/* Ocultar el header de entrada con el título */
+.page-content .entry-header,
+article .entry-header,
+.page .entry-header,
+.elementor-page .entry-header {
+    display: none !important;
+}
+
+/* También ocultar entry-title directamente */
+.entry-title,
+h1.entry-title,
+.page-content h1.entry-title {
+    display: none !important;
+}
+
+/* Mantener título visible solo donde sea necesario (posts, etc) */
+.single-post .entry-header,
+.single-post .entry-title,
+.blog .entry-header,
+.blog .entry-title {
+    display: block !important;
 }
