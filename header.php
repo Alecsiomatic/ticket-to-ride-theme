@@ -20,7 +20,7 @@
                     </div>
                     
                     <div class="header-cta">
-                        <a href="#contacto" class="btn-primary">Reservar Ahora</a>
+                        <a href="https://ticketoride.com/event-directory/" class="btn-primary">Reservar Ahora</a>
                     </div>
                 </div>
             </div>
