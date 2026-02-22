@@ -4,7 +4,7 @@ Theme URI: https://github.com/Alecsiomatic/ticket-to-ride-theme
 Author: Alecsiomatic
 Author URI: https://github.com/Alecsiomatic
 Description: Un tema moderno con efectos de vidrio líquido (liquid glass) inspirado en Ticket to Ride. Colores vibrantes amarillo dorado y rojo con efectos glassmorphism.
-Version: 1.4.5
+Version: 1.4.6
 Requires at least: 5.9
 Tested up to: 6.4
 Requires PHP: 7.4
@@ -949,14 +949,98 @@ p {
     box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4) !important;
 }
 
-/* Tooltip de asiento */
-.evost_tooltip {
-    background: rgba(0, 0, 0, 0.85) !important;
+/* Tooltip de asiento - INFORMACIÓN DE SELECCIÓN */
+.evost_tooltip,
+.evost_seat_tooltip,
+.evost_seat_info_box,
+.evost_seat_selection_info {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9)) !important;
     backdrop-filter: blur(15px) !important;
     -webkit-backdrop-filter: blur(15px) !important;
+    border-radius: 12px !important;
+    border: 2px solid var(--ttr-yellow) !important;
+    color: #1a1a2e !important;
+    padding: 15px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Header del tooltip con info de sección/fila/asiento */
+.evost_tooltip_header,
+.evost_seat_tooltip_header,
+.evost_seat_info_header {
+    background: linear-gradient(135deg, var(--ttr-yellow), var(--ttr-yellow-dark)) !important;
+    color: #1a1a2e !important;
+    padding: 10px 15px !important;
+    border-radius: 8px 8px 0 0 !important;
+    margin: -15px -15px 15px -15px !important;
+    font-weight: 700 !important;
+}
+
+/* Labels del tooltip */
+.evost_tooltip span,
+.evost_seat_tooltip span,
+.evost_seat_info_box span {
+    color: #1a1a2e !important;
+    font-weight: 600 !important;
+}
+
+/* Valores del tooltip */
+.evost_tooltip_val,
+.evost_seat_tooltip_val {
+    color: #333 !important;
+    font-weight: 500 !important;
+}
+
+/* Precio en el tooltip */
+.evost_tooltip_price,
+.evost_seat_price,
+.evost_seat_info_price {
+    color: var(--ttr-red) !important;
+    font-weight: 800 !important;
+    font-size: 1.1rem !important;
+}
+
+/* Tooltip posicionado sobre el mapa */
+.evost_seat_map_tooltip,
+.evost_map_tooltip {
+    background: rgba(255, 255, 255, 0.98) !important;
+    border: 2px solid var(--ttr-yellow) !important;
     border-radius: 10px !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    color: white !important;
+    padding: 12px 15px !important;
+    color: #1a1a2e !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+    z-index: 9999 !important;
+}
+
+.evost_seat_map_tooltip *,
+.evost_map_tooltip * {
+    color: #1a1a2e !important;
+}
+
+/* Información del asiento seleccionado */
+.evost_selected_seat_info,
+.evost_seat_selected_box {
+    background: white !important;
+    border: 2px solid var(--ttr-yellow) !important;
+    border-radius: 12px !important;
+    padding: 15px !important;
+    color: #1a1a2e !important;
+}
+
+.evost_selected_seat_info span,
+.evost_seat_selected_box span {
+    color: #1a1a2e !important;
+}
+
+/* Fix para cualquier texto dentro del tooltip negro */
+[class*="evost_"][style*="background: #000"],
+[class*="evost_"][style*="background:#000"],
+[class*="evost_"][style*="background-color: #000"],
+[class*="evost_"][style*="background-color:#000"],
+[class*="evost_"][style*="background: black"],
+[class*="evost_"][style*="background:black"] {
+    background: rgba(255, 255, 255, 0.95) !important;
+    color: #1a1a2e !important;
 }
 
 /* Mensaje de agregar al carrito */
