@@ -1,0 +1,450 @@
+/**
+ * Estilos adicionales para mejorar la compatibilidad con Elementor
+ * y proporcionar más opciones de personalización
+ */
+
+/* ===================================
+   ELEMENTOR SECTIONS
+   =================================== */
+
+/* Sección con fondo liquid glass */
+.elementor-section.liquid-glass-bg {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(232, 31, 38, 0.1) 100%);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 30px;
+    padding: 60px 40px !important;
+    margin: 20px 0;
+}
+
+/* Overlay oscuro para secciones */
+.elementor-section.dark-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+.elementor-section.dark-overlay > .elementor-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===================================
+   ELEMENTOR COLUMNS
+   =================================== */
+
+.elementor-column.glass-column > .elementor-widget-wrap {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ===================================
+   ELEMENTOR WIDGETS
+   =================================== */
+
+/* Heading con gradiente */
+.elementor-widget-heading.gradient-text .elementor-heading-title {
+    background: linear-gradient(135deg, #FFC107 0%, #E81F26 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Button con efecto glass */
+.elementor-widget-button .elementor-button.glass-button {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.elementor-widget-button .elementor-button.glass-button:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Icon Box con efecto glass */
+.elementor-widget-icon-box.glass-icon-box .elementor-icon-box-wrapper {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.elementor-widget-icon-box.glass-icon-box .elementor-icon-box-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Image con efecto hover */
+.elementor-widget-image.hover-zoom img {
+    transition: transform 0.5s ease;
+}
+
+.elementor-widget-image.hover-zoom:hover img {
+    transform: scale(1.05);
+}
+
+/* ===================================
+   FORMULARIOS
+   =================================== */
+
+.elementor-field-group input,
+.elementor-field-group textarea,
+.elementor-field-group select {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.elementor-field-group input:focus,
+.elementor-field-group textarea:focus,
+.elementor-field-group select:focus {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: var(--ttr-yellow);
+    outline: none;
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.3);
+}
+
+.elementor-field-group input::placeholder,
+.elementor-field-group textarea::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.elementor-button.elementor-size-md {
+    border-radius: 12px;
+    padding: 15px 40px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* ===================================
+   TESTIMONIALS
+   =================================== */
+
+.elementor-testimonial.glass-testimonial {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.elementor-testimonial__text {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.elementor-testimonial__name {
+    color: var(--ttr-red);
+    font-weight: bold;
+}
+
+/* ===================================
+   PRICE TABLE
+   =================================== */
+
+.elementor-price-table.glass-price {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.elementor-price-table.glass-price:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    border-color: var(--ttr-yellow);
+}
+
+.elementor-price-table__heading {
+    color: var(--ttr-red);
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.elementor-price-table__price {
+    font-size: 48px;
+    color: var(--ttr-yellow);
+    font-weight: 900;
+}
+
+/* ===================================
+   COUNTER
+   =================================== */
+
+.elementor-counter.glass-counter {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.elementor-counter-number-wrapper {
+    font-size: 64px;
+    font-weight: 900;
+    color: var(--ttr-yellow);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.elementor-counter-title {
+    font-size: 18px;
+    color: var(--ttr-white);
+    margin-top: 15px;
+}
+
+/* ===================================
+   TABS & ACCORDIONS
+   =================================== */
+
+.elementor-tab-title {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.elementor-tab-title:hover,
+.elementor-tab-title.elementor-active {
+    background: rgba(232, 31, 38, 0.2);
+    border-color: var(--ttr-red);
+}
+
+.elementor-tab-content {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* ===================================
+   SLIDERS & CAROUSELS
+   =================================== */
+
+.elementor-swiper-button {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+}
+
+.elementor-swiper-button:hover {
+    background: rgba(232, 31, 38, 0.3);
+    transform: scale(1.1);
+}
+
+/* ===================================
+   PROGRESS BAR
+   =================================== */
+
+.elementor-progress-bar {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.elementor-progress-bar__inner {
+    background: linear-gradient(90deg, var(--ttr-yellow) 0%, var(--ttr-red) 100%);
+    box-shadow: 0 2px 10px rgba(232, 31, 38, 0.5);
+}
+
+/* ===================================
+   SOCIAL ICONS
+   =================================== */
+
+.elementor-social-icon {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.elementor-social-icon:hover {
+    background: rgba(232, 31, 38, 0.3);
+    transform: translateY(-3px) rotate(5deg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ===================================
+   RESPONSIVE ADJUSTMENTS
+   =================================== */
+
+@media (max-width: 1024px) {
+    .elementor-section.liquid-glass-bg {
+        padding: 40px 20px !important;
+    }
+    
+    .elementor-column.glass-column > .elementor-widget-wrap {
+        padding: 20px;
+    }
+    
+    .elementor-counter-number-wrapper {
+        font-size: 52px;
+    }
+    
+    .elementor-widget-heading.gradient-text .elementor-heading-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .elementor-section.liquid-glass-bg {
+        border-radius: 20px;
+        padding: 30px 15px !important;
+    }
+    
+    .elementor-counter-number-wrapper {
+        font-size: 48px;
+    }
+    
+    .glass-panel,
+    .glass-icon-box .elementor-icon-box-wrapper {
+        padding: 20px;
+    }
+    
+    .elementor-widget-heading.gradient-text .elementor-heading-title {
+        font-size: 1.8rem;
+    }
+    
+    .elementor-button {
+        font-size: 14px;
+        padding: 12px 25px;
+    }
+    
+    .elementor-price-table.glass-price {
+        padding: 30px 20px;
+    }
+    
+    .elementor-price-table__price {
+        font-size: 42px;
+    }
+    
+    .elementor-swiper-button {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .elementor-section.liquid-glass-bg {
+        border-radius: 15px;
+        padding: 20px 10px !important;
+    }
+    
+    .elementor-column.glass-column > .elementor-widget-wrap {
+        padding: 15px;
+        border-radius: 15px;
+    }
+    
+    .elementor-counter-number-wrapper {
+        font-size: 36px;
+    }
+    
+    .elementor-counter-title {
+        font-size: 14px;
+    }
+    
+    .glass-panel,
+    .glass-icon-box .elementor-icon-box-wrapper {
+        padding: 15px;
+        border-radius: 15px;
+    }
+    
+    .elementor-widget-heading.gradient-text .elementor-heading-title {
+        font-size: 1.5rem;
+    }
+    
+    .elementor-button {
+        font-size: 13px;
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+    
+    .elementor-price-table.glass-price {
+        padding: 20px 15px;
+    }
+    
+    .elementor-price-table__heading {
+        font-size: 20px;
+    }
+    
+    .elementor-price-table__price {
+        font-size: 36px;
+    }
+    
+    .elementor-swiper-button {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .elementor-social-icon {
+        font-size: 14px;
+        padding: 8px;
+    }
+    
+    /* Simplificar efectos en móvil pequeño */
+    .elementor-widget-button .elementor-button.glass-button {
+        backdrop-filter: blur(5px);
+    }
+    
+    .elementor-testimonial.glass-testimonial {
+        padding: 20px;
+        border-radius: 15px;
+    }
+    
+    .elementor-testimonial__text {
+        font-size: 14px;
+    }
+}
+
+/* ===================================
+   UTILITY CLASSES FOR ELEMENTOR
+   =================================== */
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.full-height {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

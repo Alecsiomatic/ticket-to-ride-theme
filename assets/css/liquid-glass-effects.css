@@ -1,0 +1,536 @@
+/**
+ * Liquid Glass Effects - Advanced Styles
+ * Ticket to Ride Theme
+ */
+
+/* ===================================
+   ADVANCED GLASSMORPHISM EFFECTS
+   =================================== */
+
+/* Efecto de líquido en movimiento */
+.liquid-wave {
+    position: relative;
+    overflow: hidden;
+}
+
+.liquid-wave::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 193, 7, 0.3) 0%,
+        rgba(232, 31, 38, 0.2) 30%,
+        transparent 60%
+    );
+    animation: liquid-wave-animation 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes liquid-wave-animation {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.5;
+    }
+    25% {
+        transform: translate(10%, -10%) scale(1.1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translate(0, -20%) scale(0.9);
+        opacity: 0.6;
+    }
+    75% {
+        transform: translate(-10%, -10%) scale(1.1);
+        opacity: 0.7;
+    }
+}
+
+/* Burbujas flotantes de fondo */
+.bubble-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 30% 30%,
+        rgba(255, 255, 255, 0.4),
+        rgba(255, 193, 7, 0.1)
+    );
+    backdrop-filter: blur(5px);
+    animation: float-up 15s ease-in-out infinite;
+}
+
+.bubble:nth-child(1) {
+    width: 80px;
+    height: 80px;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    width: 120px;
+    height: 120px;
+    left: 30%;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(3) {
+    width: 60px;
+    height: 60px;
+    left: 50%;
+    animation-delay: 4s;
+}
+
+.bubble:nth-child(4) {
+    width: 100px;
+    height: 100px;
+    left: 70%;
+    animation-delay: 6s;
+}
+
+.bubble:nth-child(5) {
+    width: 90px;
+    height: 90px;
+    left: 85%;
+    animation-delay: 8s;
+}
+
+@keyframes float-up {
+    0% {
+        bottom: -150px;
+        opacity: 0;
+        transform: translateX(0) rotate(0deg);
+    }
+    10% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        bottom: 110%;
+        opacity: 0;
+        transform: translateX(100px) rotate(360deg);
+    }
+}
+
+/* Glass panel con reflejo */
+.glass-panel {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.05) 100%
+    );
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 8px 32px 0 rgba(31, 38, 135, 0.37),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: left 0.5s;
+}
+
+.glass-panel:hover::before {
+    left: 100%;
+}
+
+/* Efecto de gotas */
+.droplet-effect {
+    position: relative;
+}
+
+.droplet {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50% 50% 0 50%;
+    background: radial-gradient(
+        circle at 30% 30%,
+        rgba(255, 255, 255, 0.8),
+        rgba(255, 193, 7, 0.3)
+    );
+    opacity: 0;
+    animation: droplet-fall 3s ease-in infinite;
+}
+
+@keyframes droplet-fall {
+    0% {
+        top: -20px;
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+        transform: rotate(180deg);
+    }
+}
+
+/* Texto con efecto de vidrio */
+.glass-text {
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(255, 193, 7, 0.5);
+    position: relative;
+}
+
+.glass-text::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    color: rgba(255, 255, 255, 0.1);
+    z-index: -1;
+    filter: blur(2px);
+}
+
+/* Botones con efecto líquido mejorado */
+.btn-liquid {
+    position: relative;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #E81F26, #FFC107);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-liquid::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-liquid:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-liquid::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: liquid-shimmer 3s infinite;
+}
+
+@keyframes liquid-shimmer {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
+
+/* Card con efecto de profundidad */
+.depth-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 
+        0 8px 32px 0 rgba(31, 38, 135, 0.37),
+        0 2px 8px 0 rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.depth-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 
+        0 16px 48px 0 rgba(31, 38, 135, 0.5),
+        0 4px 16px 0 rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.5);
+}
+
+/* Loader con efecto líquido */
+.liquid-loader {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: 50px auto;
+}
+
+.liquid-loader::before,
+.liquid-loader::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 30% 30%,
+        rgba(255, 193, 7, 0.8),
+        rgba(232, 31, 38, 0.4)
+    );
+    animation: liquid-pulse 2s ease-in-out infinite;
+}
+
+.liquid-loader::after {
+    animation-delay: 1s;
+}
+
+@keyframes liquid-pulse {
+    0%, 100% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Separador con efecto líquido */
+.liquid-divider {
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 193, 7, 0.5),
+        rgba(232, 31, 38, 0.5),
+        transparent
+    );
+    margin: 40px 0;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.liquid-divider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.8),
+        transparent
+    );
+    animation: divider-flow 3s linear infinite;
+}
+
+@keyframes divider-flow {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 200%;
+    }
+}
+
+/* Hover con efecto ripple */
+.ripple-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple-effect::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s, opacity 0.6s;
+    opacity: 0;
+}
+
+.ripple-effect:hover::after {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+}
+
+/* Efecto de frosted glass */
+.frosted-glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Elementos específicos para Elementor */
+.elementor-section.liquid-background {
+    position: relative;
+    overflow: hidden;
+}
+
+.elementor-widget-heading.glass-heading .elementor-heading-title {
+    background: linear-gradient(135deg, #FFC107, #E81F26);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Transiciones suaves para todos los elementos glass */
+.liquid-glass,
+.glass-panel,
+.depth-card,
+.frosted-glass {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===================================
+   RESPONSIVE LIQUID GLASS EFFECTS
+   =================================== */
+
+@media (max-width: 1024px) {
+    /* Reducir animaciones en tablets */
+    .liquid-wave::after,
+    .glass-panel::before {
+        animation-duration: 10s;
+    }
+    
+    .bubble {
+        width: 60px !important;
+        height: 60px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Optimizar efectos para móvil */
+    .liquid-glass,
+    .glass-panel,
+    .frosted-glass {
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+    
+    .liquid-glass::before,
+    .glass-panel::before {
+        animation-duration: 12s;
+    }
+    
+    .bubble {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    .depth-card:hover {
+        transform: translateY(-3px) scale(1.01);
+    }
+    
+    .btn-liquid {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Efectos mínimos para móviles pequeños */
+    .liquid-glass,
+    .glass-panel,
+    .frosted-glass {
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+    
+    /* Desactivar animaciones pesadas */
+    .liquid-wave::after,
+    .glass-panel::before,
+    .liquid-glass::before {
+        animation: none;
+        display: none;
+    }
+    
+    .bubble-background {
+        display: none;
+    }
+    
+    .droplet-effect .droplet {
+        display: none;
+    }
+    
+    /* Simplificar botones */
+    .btn-liquid::after {
+        display: none;
+    }
+    
+    .btn-liquid {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+    
+    /* Loader más simple */
+    .liquid-loader {
+        width: 60px;
+        height: 60px;
+    }
+    
+    /* Cards sin hover complejos */
+    .depth-card:hover {
+        transform: none;
+    }
+}
